@@ -14,3 +14,17 @@ class Quiz(db.Model):
     back_populates="quiz",
     cascade="all, delete-orphan"
   )
+  
+  @classmethod
+  def from_obj(cls, obj):
+    return cls(
+      operation=obj["operation"],
+      difficulty=obj["difficulty"],
+    )
+  
+  def to_dict(self):
+    return {
+      "operation":self.operation,
+      "difficulty":self.difficulty,
+      "questions":[question.to_dict() for question in self.questions]
+    }
