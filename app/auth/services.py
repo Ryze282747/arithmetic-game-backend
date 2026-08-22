@@ -13,7 +13,7 @@ def authenticate(data):
   password = data["password"].replace(" ", "")
   role = data["role"].replace(" ", "")
   
-  user = User.query.filter_by(username=username).first()
+  user = User.query.filter_by(username=username.lower()).first()
   
   if not user:
     return {"msg":"Invalid credentials."}, 401
