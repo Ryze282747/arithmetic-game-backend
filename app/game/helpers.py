@@ -59,9 +59,9 @@ def get_choices(number_range, answer):
   choices = [answer,]
   
   while len(choices) != 4:
-    num = get_number_from_range(number_range)
+    num = answer + get_number_from_range((-10, 10))
     
-    if num not in choices:
+    if num > 0 and num not in choices:
       choices.append(num)
   
   random.shuffle(choices)

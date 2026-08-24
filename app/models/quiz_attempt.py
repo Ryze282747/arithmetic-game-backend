@@ -14,6 +14,8 @@ class QuizAttempt(db.Model):
   time = db.Column(db.Float, nullable=False)
   correct_answers = db.Column(db.Integer, nullable=False)
   total_questions = db.Column(db.Integer, nullable=False)
+  operation = db.Column(db.String(20), nullable=False)
+  difficulty = db.Column(db.String(20), nullable=False)
   date_taken = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
   
   user = db.relationship("User", back_populates="quiz_attempts")
