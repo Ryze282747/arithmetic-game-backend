@@ -1,5 +1,5 @@
 from .helpers import get_range, get_number_from_range, get_question, get_answer, get_choices
-from app.models.question import Question
+from app.models import Question
 from app.extensions import db
 
 def generate_questions(quiz):

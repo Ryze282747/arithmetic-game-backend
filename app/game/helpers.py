@@ -67,3 +67,26 @@ def get_choices(number_range, answer):
   random.shuffle(choices)
   
   return choices
+
+def get_total_score(raw_scores, quiz):
+  
+  score_multiplier = {
+    "operation": {
+      "addition": 1,
+      "subtraction": 2,
+      "multiplication": 4,
+      "division": 5,
+    },
+    "difficulty": {
+      "easy": 1,
+      "medium": 2,
+      "hard": 3,
+    }
+  }
+  
+  multiplier = score_multiplier["operation"][quiz.operation] * score_multiplier["difficulty"][quiz.difficulty]
+  
+  new_scores = list(map(lambda score: score * multiplier, raw_scores))
+  
+  return sum(new_scores)
+  

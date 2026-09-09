@@ -1,4 +1,5 @@
 from app.decorators.auth import admin_required, student_required
+from .services import get_student_dashboard
 from flask_login import login_required
 from . import dashboard_bp 
 from flask import jsonify
@@ -7,4 +8,7 @@ from flask import jsonify
 @login_required
 @student_required
 def student_dashboard():
-  return jsonify({"msg":"Test"}), 200
+  
+  res, status = get_student_dashboard()
+  
+  return jsonify(res), 200

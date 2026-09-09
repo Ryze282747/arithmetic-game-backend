@@ -27,6 +27,8 @@ class QuizAttempt(db.Model):
       time=obj["time"],
       correct_answers=obj["correct_answers"],
       total_questions=obj["total_questions"],
+      operation=obj["operation"],
+      difficulty=obj["difficulty"],
       user=current_user,
     )
   

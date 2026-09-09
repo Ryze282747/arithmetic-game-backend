@@ -16,7 +16,7 @@ class Quiz(db.Model):
   )
   
   @classmethod
-  def from_obj(cls, obj):
+  def from_dict(cls, obj):
     return cls(
       operation=obj["operation"],
       difficulty=obj["difficulty"],

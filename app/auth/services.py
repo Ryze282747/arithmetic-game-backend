@@ -1,6 +1,6 @@
 from flask_login import login_user, current_user
 from app.auth.validators import validate_signup
-from app.models.user import User
+from app.models import User
 from app.extensions import db
 from flask import session
 import time
