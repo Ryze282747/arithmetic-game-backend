@@ -4,7 +4,7 @@ from app.models import QuizAttempt
 
 def get_student_dashboard():
   
-  attempts = QuizAttempt.query.filter_by(user_id=current_user.id).all()
+  attempts = current_user.quiz_attempts
   
   if len(attempts) == 0:
     return {
